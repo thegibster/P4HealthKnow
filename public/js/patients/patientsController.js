@@ -34,6 +34,7 @@
       vm.patient = {};
 
       PatientResource.get({id: $stateParams.id}).$promise.then(function(jsonPatient) {
+          console.log(jsonPatient);
           vm.patient = jsonPatient;
       });
     }

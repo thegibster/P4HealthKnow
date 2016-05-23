@@ -2,7 +2,7 @@ var Patient = require('../models/patient');
 
 module.exports = {
   index: index,
-  patient: patient,
+  show: show,
   create: create,
   update: update,
   destroy: destroy
@@ -17,7 +17,7 @@ function index(req, res, next) {
   });
 }
 
-function patient(req, res, next) {
+function show(req, res, next) {
   var id = req.params.id;
 
   Patient.findById(id, function(err, patient) {

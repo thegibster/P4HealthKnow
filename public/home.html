@@ -2,6 +2,14 @@
 <a ui-sref="patientList">See all patientss</a>
 <p>Hey isnt this my patient</p>
 <div ng-controller="PatientController as patients">
-  <li ng-repeat="patient in patients">{{patient}}</li>
+  {{patients}}
+  <li ng-repeat="patient in patients ">
+  <li ng-repat="n in patient">{{n}}</li>
+  <!-- {{patient}} -->
+
+</li>
+
+
+
 
 </div>

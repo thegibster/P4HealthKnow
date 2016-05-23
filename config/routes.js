@@ -11,6 +11,7 @@ router.get('/', patientsController.index);
 
 //API
 router.get('/api/patients',patientsController.index);
+router.get('/api/patients/:id',patientsController.show);
 router.post('/api/patients', patientsController.create);
 router.delete('/api/patients/:id', patientsController.destroy);
 router.put('/api/patients/:id', patientsController.update);

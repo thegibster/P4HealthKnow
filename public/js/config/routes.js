@@ -10,15 +10,9 @@
         url: '/',
         templateUrl: 'home.html'
       })
-      .state('patientList', {
-        url: '/patients/list',
-        templateUrl: "js/patients/patient-list.html",
-        controller: 'PatientController',
-        controllerAs: 'patientListVm'
-      })
       .state('patientPatient', {
-        url: '/patients/patient/:id',
-        templateUrl: 'js/patients/patient-patient.html',
+        url: '/patients/:id',
+        templateUrl: 'js/patients/patient-show.html',
         controller: 'PatientPatientController',
         controllerAs: 'patientPatientVm'
       })
