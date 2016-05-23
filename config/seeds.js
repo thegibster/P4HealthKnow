@@ -19,6 +19,7 @@ dental_history: [{visitType:'General Checkup',date: Date('2002-09-09')
 }],
 dob: Date('1970-05-01'),
 first_name: 'Marlon',
+gender:'M',
 insurance_info:{insurer:'Aetna',policyId:'#143Hd13'},
 last_name: 'Bakers',
 phone_number:'673-9812-7813',

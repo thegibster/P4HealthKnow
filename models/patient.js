@@ -11,6 +11,7 @@ var patientSchema = mongoose.Schema({
   dental_history: [{visitType:String,date:Date required: true}],
   dob: Date,
   first_name: Number,
+  gender:String;
   insurance_info:{insurer:String,policyId:String},
   last_name: Number,
   phone_number:String,
