@@ -25,11 +25,9 @@
       <label for="gender">Gender:</label>
       <input type="text" name="gender" ng-model="patientEditVm.patient.gender">
     </div>
-    <div ng-repeat="checkup in patientEditVm.patient.checkups">
-
-        <label for="checkup{{$index}}-last">Checkup:</label>
-        <input type="date"   name="checkup{{$index}-last" ng-model="checkup.last">
-
+    <div >
+        <label for="checkup.last">Last Checkup:</label>
+        <input type="date"   name="checkup.last" ng-model="patientEditVm.patient.checkups.last">
     </div>
     <!-- need to fix the way to lop throught this -->
     <div ng-repeat="checkup in patientEditVm.patient.checkups">
