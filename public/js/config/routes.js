@@ -1,5 +1,5 @@
 (function() {
-  angular.module('wsmdApp')
+  angular.module('healthKnowIt')
     .config(MainRouter);
 
   MainRouter.$inject = ['$stateProvider', '$urlRouterProvider'];

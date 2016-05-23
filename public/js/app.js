@@ -1,3 +1,3 @@
 (function() {
-  angular.module('wsmdApp', ['ui.router', 'ngResource']);
+  angular.module('healthKnowIt', ['ui.router', 'ngResource']);
 })();

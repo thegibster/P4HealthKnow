@@ -1,5 +1,5 @@
 (function() {
-  angular.module('wsmdApp')
+  angular.module('healthKnowIt')
     .factory("ShowResource", ShowResource);
 
   ShowResource.$inject = ['$resource'];

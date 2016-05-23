@@ -1,5 +1,5 @@
 (function() {
-  angular.module('wsmdApp')
+  angular.module('healthKnowIt')
     .controller("ShowListController", ShowListController)
     .controller("ShowShowController", ShowShowController)
     .controller("ShowNewController", ShowNewController)
