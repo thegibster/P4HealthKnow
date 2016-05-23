@@ -13,14 +13,15 @@ var patientSchema = mongoose.Schema({
   first_name: Number,
   insurance_info:{},
   last_name: Number,
+  phone_number:String,
   prescriptions: {
-    drugs:{},
-    glasses:{}
+    drugs:[{name:String}],
+    glasses:[{prescription:String,manufacture:String}]
   },
-  primary_health_provider:{},
-  procedures : {},
-  test: {},
-  vaccinations:{}
+  primary_health_provider:{hospita:String,name:String},
+  procedures : [{nameOfOperation:String,lengthOfRec:String}],
+  test: [{nameOfTest:String,dateOf:Date required: true,results:String}],
+  vaccinations:[{nameOfVacc:String,dateOf:Date required: true}]
 });
 
 //Break the prodecure down like the airplane lab  for double scheme
