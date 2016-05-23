@@ -2,15 +2,70 @@
   <h3>Edit Patient(So that thier data is always up to date)</h3>
   <form id='edit-patient' ng-submit="patientEditVm.editPatient()">
     <div>
-      <label for="title">Title:</label>
-      <input type="text" name="title" ng-model="patientEditVm.patient.title">
+      <label for="bloodtype">Bloodtype:</label>
+      <input type="text" name="bloodtype" ng-model="patientEditVm.patient.bloodtype">
     </div>
     <div>
-      <label for="length">Length:</label>
+      <label for="dob">DOB:</label>
+      <input type="number" name="dob" ng-model="patientEditVm.patient.dob">
+    </div>
+    <div>
+      <label for="first_name">First Name:</label>
+      <input type="text" name="first_name" ng-model="patientEditVm.patient.first_name">
+    </div>
+    <div>
+      <label for="last_name">Last Name:</label>
+      <input type="text" name="last_name" ng-model="patientEditVm.patient.last_name">
+    </div>
+    <div>
+      <label for="phone_number">Phone Number:</label>
+      <input type="number" name="phone_number" ng-model="patientEditVm.patient.phone_number">
+    </div>
+    <div>
+      <label for="gender">Gender:</label>
+      <input type="text" name="gender" ng-model="patientEditVm.patient.gender">
+    </div>
+    <div ng-repeat="checkup in patientEditVm.patient.checkups">
+
+        <label for="checkup{{$index}}-last">Checkup:</label>
+        <input type="date"   name="checkup{{$index}-last" ng-model="checkup.last">
+
+    </div>
+    <!-- need to fix the way to lop throught this -->
+    <div ng-repeat="checkup in patientEditVm.patient.checkups">
+
+        <label for="checkup{{$index}}-previous">Checkup:</label>
+        <input type="text"   name="checkup{{$index}-previous" ng-model="checkup.previous.name">
+        <input type="text"   name="checkup{{$index}-previous" ng-model="checkup.previous.result">
+        <input type="date"   name="checkup{{$index}-previous" ng-model="checkup.previous.date_of_physical">
+
+    </div>
+    <div>
+      <label for="length">Dental History:</label>
       <input type="number" name="length" ng-model="patientEditVm.patient.length">
     </div>
     <div>
-      <label for="source">Source:</label>
+      <label for="source">Insurance Information:</label>
+      <input type="text" name="source" ng-model="patientEditVm.patient.source">
+    </div>
+    <div>
+      <label for="title">Prescriptions:</label>
+      <input type="text" name="title" ng-model="patientEditVm.patient.title">
+    </div>
+    <div>
+      <label for="length">Primary Health Provider:</label>
+      <input type="number" name="length" ng-model="patientEditVm.patient.length">
+    </div>
+    <div>
+      <label for="source">Procedures:</label>
+      <input type="text" name="source" ng-model="patientEditVm.patient.source">
+    </div>
+    <div>
+      <label for="source">Test:</label>
+      <input type="text" name="source" ng-model="patientEditVm.patient.source">
+    </div>
+    <div>
+      <label for="source">Vaccinations:</label>
       <input type="text" name="source" ng-model="patientEditVm.patient.source">
     </div>
     <input type="submit" value="Edit">
