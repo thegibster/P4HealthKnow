@@ -10,10 +10,11 @@ var Patient = require('../models/patient');
 var patients = [{
   bloodtype: 'O+',
   checkups:{last:Date('2014-12-08'),
-  physical:{
+  previous:[{
+    name:'Physical',
     result:'Normal blood work.',
     date_of_physical:Date('2015-10-05')
-  }
+  }]
   },
 dental_history: [{visitType:'General Checkup',date: Date('2002-09-09')
 }],
@@ -38,10 +39,11 @@ vaccinations:[{nameOfVacc:'HPV',dateOf:Date('2000-05-01')},
 {
   bloodtype: 'O+',
   checkups:{last:Date('2014-12-08'),
-  physical:{
+  previous:[{
+    name:'Allergy Test',
     result:'Normal blood work.',
     date_of_physical:Date('2015-10-05')
-  }
+  }]
   },
 dental_history: [{visitType:'General Checkup',date: Date('2002-09-09')
 }],

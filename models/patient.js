@@ -3,10 +3,11 @@ var mongoose = require('mongoose');
 var patientSchema = mongoose.Schema({
   bloodtype: String,
   checkups:{last:Date,
-    physical:{
-      results:String,
-      date_of_physical:Date
-    }
+    previous:[{
+      name:String,
+      result:String,
+      date_of_physical:{type:Date, required:true}
+    }]
   },
   dental_history: [{visitType:String,date:{type:Date ,required: true}}],
   dob: Date,
