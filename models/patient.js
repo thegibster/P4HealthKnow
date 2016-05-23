@@ -8,10 +8,10 @@ var patientSchema = mongoose.Schema({
       date_of_physical:Date
     }
   },
-  dental_history: {},
+  dental_history: [{visitType:String,date:Date required: true}],
   dob: Date,
   first_name: Number,
-  insurance_info:{},
+  insurance_info:{insurer:String,policyId:String},
   last_name: Number,
   phone_number:String,
   prescriptions: {
