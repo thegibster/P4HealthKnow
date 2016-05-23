@@ -1,0 +1,10 @@
+Patient List Template
+<a ui-sref="patientNew">Add a new patient</a>
+<div ng-repeat="patient in patientListVm.patients">
+  <p>{{patient.title}}</p>
+  <p>{{patient.length}}</p>
+  <p>{{patient.source}}</p>
+  <a ui-sref="patientPatient({id: patient._id})">See This Patient</a>
+  <a ng-click="patientListVm.destroy(patient)">This Patient Sucks!</a>
+  <hr>
+</div>

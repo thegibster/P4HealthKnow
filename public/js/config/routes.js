@@ -10,29 +10,29 @@
         url: '/',
         templateUrl: 'home.html'
       })
-      .state('showList', {
-        url: '/shows/list',
-        templateUrl: "js/shows/show-list.html",
-        controller: 'ShowListController',
-        controllerAs: 'showListVm'
+      .state('patientList', {
+        url: '/patients/list',
+        templateUrl: "js/patients/patient-list.html",
+        controller: 'PatientController',
+        controllerAs: 'patientListVm'
       })
-      .state('showShow', {
-        url: '/shows/show/:id',
-        templateUrl: 'js/shows/show-show.html',
-        controller: 'ShowShowController',
-        controllerAs: 'showShowVm'
+      .state('patientPatient', {
+        url: '/patients/patient/:id',
+        templateUrl: 'js/patients/patient-patient.html',
+        controller: 'PatientPatientController',
+        controllerAs: 'patientPatientVm'
       })
-      .state('showNew', {
-        url: '/shows/new',
-        templateUrl: 'js/shows/show-new.html',
-        controller: 'ShowNewController',
-        controllerAs: 'showNewVm'
+      .state('patientNew', {
+        url: '/patients/new',
+        templateUrl: 'js/patients/patient-new.html',
+        controller: 'PatientNewController',
+        controllerAs: 'patientNewVm'
       })
-      .state('showEdit', {
-        url: '/shows/edit/:id',
-        templateUrl: 'js/shows/show-edit.html',
-        controller: 'ShowEditController',
-        controllerAs: 'showEditVm'
+      .state('patientEdit', {
+        url: '/patients/edit/:id',
+        templateUrl: 'js/patients/patient-edit.html',
+        controller: 'PatientEditController',
+        controllerAs: 'patientEditVm'
       });
 
     $urlRouterProvider.otherwise('/');

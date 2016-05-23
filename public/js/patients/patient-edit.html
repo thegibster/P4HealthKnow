@@ -1,0 +1,18 @@
+<div>
+  <h3>Edit Patient(So that thier data is always up to date)</h3>
+  <form id='edit-patient' ng-submit="patientEditVm.editPatient()">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" name="title" ng-model="patientEditVm.patient.title">
+    </div>
+    <div>
+      <label for="length">Length:</label>
+      <input type="number" name="length" ng-model="patientEditVm.patient.length">
+    </div>
+    <div>
+      <label for="source">Source:</label>
+      <input type="text" name="source" ng-model="patientEditVm.patient.source">
+    </div>
+    <input type="submit" value="Edit">
+  </form>
+</div>
