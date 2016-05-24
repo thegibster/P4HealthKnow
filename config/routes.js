@@ -6,15 +6,17 @@ var patientsController = require('../controllers/patients');
 
 // root path:
 router.get('/', patientsController.index);
-// router.get('/about', pagesController.about);
-// router.get('/todos',    pagesController.index);
+// router.put('/patients/:id', patientsController.update);
+// router.post('/patients', patientsController.create);
+// router.delete('/patients/:id', patientsController.destroy);
 
 //API
 router.get('/api/patients',patientsController.index);
 router.get('/api/patients/:id',patientsController.show);
-router.post('/api/patients', patientsController.create);
-router.delete('/api/patients/:id', patientsController.destroy);
 router.put('/api/patients/:id', patientsController.update);
+router.post('/api/patients', patientsController.create);
+// router.delete('/api/patients/:id', patientsController.destroy);
+
 
 
 // router.route('/api/patients')

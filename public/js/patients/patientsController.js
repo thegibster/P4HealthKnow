@@ -39,7 +39,7 @@
       });
        vm.findPill =function (pill){
 
-          $http.get("whttp://pillbox.nlm.nih.gov/PHP/pillboxAPIService.php?key=F2IWKICTOM&imprint=p24hr")
+          $http.get("http://pillbox.nlm.nih.gov/PHP/pillboxAPIService.php?key=F2IWKICTOM&imprint=p24hr")
              .then(function(response) {
                 console.log(response);
              });

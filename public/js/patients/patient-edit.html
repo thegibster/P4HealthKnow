@@ -81,14 +81,14 @@
      <input type="text" name="test.nameOfTest" ng-model="test.nameOfTest">
      <input type="text" name="test.results" ng-model="test.results">
      <!-- format the date obects todo -->
-     <input type="text" name="test.dateOf" ng-model="test.dateOf">
+     <input type="date" name="test.dateOf" ng-model="test.dateOf">
      </div>
     </div>
     <div>
       <label for="vaccinations">Vaccinations:</label>
       <div ng-repeat=" vacc in patientEditVm.patient.vaccinations">
       <input type="text" name="vacc.nameOfVacc" ng-model="vacc.nameOfVacc">
-      <input type="text" name="vacc.dateOf" ng-model="vacc.dateOf">
+      <input type="date" name="vacc.dateOf" ng-model="vacc.dateOf">
       </div>
     </div>
     <input type="submit" value="Edit">
