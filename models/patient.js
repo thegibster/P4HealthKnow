@@ -20,7 +20,7 @@ var patientSchema = mongoose.Schema({
     drugs:[{name:String}],
     glasses:[{prescription:String,manufacture:String}]
   },
-  primary_health_provider:{hospita:String,name:String},
+  primary_health_provider:{hospital:String,name:String},
   procedures : [{nameOfOperation:String,lengthOfRec:String}],
   test: [{nameOfTest:String,dateOf:{type:Date,required: true},results:String}],
   vaccinations:[{nameOfVacc:String,dateOf:{type:Date, required: true}}]

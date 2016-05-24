@@ -28,7 +28,7 @@ prescriptions: {
   drugs:[{name:'aspirin'},{name:'metformin'}],
   glasses:[{prescription:'10/20',manufacture:'Bez Glasses'}]
 },
-primary_health_provider:{hostpital:'Kaiser',name:'Dr.Uncles'},
+primary_health_provider:{hospital:'Kaiser',name:'Dr.Uncles'},
 procedures : [{nameOfOperation:'Hysterectomy',lengthOfRec:'5 Months'}],
 test: [{nameOfTest:'Blood Count',dateOf:new Date('2000-6-11'),results:'Low t count.'}],
 vaccinations:[{nameOfVacc:'HPV',dateOf:new Date('2000-05-01')},
@@ -57,7 +57,7 @@ prescriptions: {
   drugs:[{name:'aspirin'},{name:'metformin'}],
   glasses:[{prescription:'10/20',manufacture:'Bez Glasses'}]
 },
-primary_health_provider:{hostpital:'Kaiser',name:'Dr.Uncles'},
+primary_health_provider:{hospital:'Kaiser',name:'Dr.Uncles'},
 procedures : [{nameOfOperation:'Hysterectomy',lengthOfRec:'5 Months'}],
 test: [{nameOfTest:'Blood Count',dateOf: new Date('2000-6-11'),results:'Low t count.'}],
 vaccinations:[{nameOfVacc:'HPV',dateOf: new Date('2000-05-01')},
