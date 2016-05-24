@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('wsmdApp')
+    .module('healthKnowIt')
     .factory("authService", authService);
 
   authService.$inject = ["$log", "tokenService", "$http"];

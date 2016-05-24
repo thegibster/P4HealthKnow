@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-    .module("wsmdApp")
+    .module("healthKnowIt")
     .controller("SignInController", SignInController);
 
   SignInController.$inject = ["$log", "authService", "userService", "$state"];

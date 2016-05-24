@@ -2,7 +2,7 @@
   "use strict";
 
   angular
-    .module("wsmdApp")
+    .module("healthKnowIt")
     .controller("NavbarController", NavbarController);
 
   NavbarController.$inject = ["$log", "authService"];
