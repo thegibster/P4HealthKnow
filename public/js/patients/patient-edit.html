@@ -7,7 +7,7 @@
     </div>
     <div>
       <label for="dob">DOB:</label>
-      <input type="number" name="dob" ng-model="patientEditVm.patient.dob">
+      <input type="date" name="dob" ng-model="patientEditVm.patient.dob">
     </div>
     <div>
       <label for="first_name">First Name:</label>
@@ -19,7 +19,7 @@
     </div>
     <div>
       <label for="phone_number">Phone Number:</label>
-      <input type="number" name="phone_number" ng-model="patientEditVm.patient.phone_number">
+      <input type="text" name="phone_number" ng-model="patientEditVm.patient.phone_number">
     </div>
     <div>
       <label for="gender">Gender:</label>
@@ -30,12 +30,12 @@
         <input type="date"   name="checkup.last" ng-model="patientEditVm.patient.checkups.last">
     </div>
     <!-- need to fix the way to lop throught this -->
-    <div ng-repeat="checkup in patientEditVm.patient.checkups">
+    <div ng-repeat="checkup in patientEditVm.patient.checkups.previous">
 
         <label for="checkup{{$index}}-previous">Checkup:</label>
-        <input type="text"   name="checkup{{$index}-previous" ng-model="checkup.previous.name">
-        <input type="text"   name="checkup{{$index}-previous" ng-model="checkup.previous.result">
-        <input type="date"   name="checkup{{$index}-previous" ng-model="checkup.previous.date_of_physical">
+        <input type="text"   name="name" ng-model="checkup.name">
+        <input type="text"   name="checkup{{$index}-previous" ng-model="checkup.result">
+        <input type="date"   name="checkup{{$index}-previous" ng-model="checkup.date_of_physical">
 
     </div>
     <div>

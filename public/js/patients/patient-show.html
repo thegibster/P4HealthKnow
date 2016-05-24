@@ -28,3 +28,10 @@
   {{test.nameOfTest}} {{test.dateOf}} {{test.results}}
 </li>
 <a ui-sref="patientEdit({id:patientPatientVm.patient._id})">Edit This Patient</a>
+
+
+<form ng-submit="patientPatientVm.findPill(pill)">
+  Enter text and hit enter:
+  <input type="text" ng-model="pill" name="text" />
+  <input type="submit" id="submit" value="Submit" />
+</form>

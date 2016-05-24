@@ -6,7 +6,7 @@
     .controller("PatientEditController", PatientEditController);
 
     PatientController.$inject = ['PatientResource'];
-    PatientPatientController.$inject = ['PatientResource', '$stateParams'];
+    PatientPatientController.$inject = ['PatientResource', '$stateParams','$http'];
     PatientNewController.$inject = ['PatientResource', '$state'];
     PatientEditController.$inject = ['PatientResource', '$stateParams', '$state'];
 
@@ -29,7 +29,7 @@
       }
     }
 
-    function PatientPatientController(PatientResource, $stateParams) {
+    function PatientPatientController(PatientResource, $stateParams,$http) {
       var vm = this;
       vm.patient = {};
 
@@ -37,7 +37,31 @@
           console.log(jsonPatient);
           vm.patient = jsonPatient;
       });
+       vm.findPill =function (pill){
+
+          $http.get("whttp://pillbox.nlm.nih.gov/PHP/pillboxAPIService.php?key=F2IWKICTOM&imprint=p24hr")
+             .then(function(response) {
+                console.log(response);
+             });
+
+        // $http({
+        //   method: "GET",
+        //   uri: "http://pillbox.nlm.nih.gov/PHP/pillboxAPIService.php",
+        //   qs: {
+        //     key: "F2IWKICTOM",
+        //         imprint: pill
+        //       }
+        //     })
+        //     // .then(response => console.log(response))
+        //     .then(function(response) {
+        //       console.log(response + " 1");
+        //     })
+        //     .catch(err => console.log(err));
+
     }
+    }
+
+
 
     function PatientNewController(PatientResource, $state) {
       var vm = this;
