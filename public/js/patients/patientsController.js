@@ -39,10 +39,14 @@
       });
        vm.findPill =function (pill){
 
-          $http.get("http://pillbox.nlm.nih.gov/PHP/pillboxAPIService.php?key=F2IWKICTOM&imprint=p24hr")
-             .then(function(response) {
-                console.log(response);
-             });
+          // $http.get("http://pillbox.nlm.nih.gov/PHP/pillboxAPIService.php?key=F2IWKICTOM&imprint=p24hr")
+          //    .then(function(response) {
+          //       console.log(response);
+          //    });
+          console.log(pill + "this is pill");
+        $http.put('http://localhost:3000/sillytest',{"imprint":pill}).success(function(data){
+         console.log(data);
+        });
 
         // $http({
         //   method: "GET",
