@@ -32,6 +32,7 @@
     function PatientPatientController(PatientResource, $stateParams,$http) {
       var vm = this;
       vm.patient = {};
+      vm.showPill='';
 
       PatientResource.get({id: $stateParams.id}).$promise.then(function(jsonPatient) {
           console.log(jsonPatient);
@@ -43,9 +44,10 @@
           //    .then(function(response) {
           //       console.log(response);
           //    });
-          console.log(pill + "this is pill");
+        console.log(pill + " this is pill");
         $http.put('http://localhost:3000/sillytest',{"imprint":pill}).success(function(data){
-         console.log(data);
+         vm.showPill = data;
+         console.log(data + "success");
         });
 
         // $http({

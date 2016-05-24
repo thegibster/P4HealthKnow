@@ -19,14 +19,14 @@ router.put('/api/patients/:id', patientsController.update);
 router.post('/api/patients', patientsController.create);
 // router.delete('/api/patients/:id', patientsController.destroy);
 
-router.put('/sillytest',function(res,req){
+router.put('/sillytest',function(req,res){
     // console.log(res.body.imprint + " am am testing a call");
    rp({
      method: "GET",
      uri: "http://pillbox.nlm.nih.gov/PHP/pillboxAPIService.php",
      qs: {
        key: "F2IWKICTOM",
-           imprint: res.body.imprint
+           imprint: req.body.imprint
          }
        })
        // .then(response => console.log(response))
@@ -34,6 +34,7 @@ router.put('/sillytest',function(res,req){
          // console.log(response + " 1");
          parseString(response, function (err, result) {
              console.log(JSON.stringify(result.Pills.pill[0].RXSTRING[0]));
+              res.json((JSON.stringify(result.Pills.pill[0].RXSTRING[0])));
          });
          console.log(response.body)
          // return response.body
