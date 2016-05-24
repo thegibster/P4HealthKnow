@@ -3,7 +3,21 @@
   <form id='edit-patient' ng-submit="patientEditVm.editPatient()">
     <div>
       <label for="bloodtype">Bloodtype:</label>
-      <input type="text" name="bloodtype" ng-model="patientEditVm.patient.bloodtype">
+      <select name="bloodtype" ng-model="patientEditVm.patient.bloodtype">
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="A">A </option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="B">B</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+          <option value="AB">AB</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="O">O</option>
+          <option value="Unknown">Unknown</option>
+      </select>
     </div>
     <div>
       <label for="dob">DOB:</label>
@@ -23,7 +37,11 @@
     </div>
     <div>
       <label for="gender">Gender:</label>
-      <input type="text" name="gender" ng-model="patientEditVm.patient.gender">
+       <select name="gender" ng-model="patientEditVm.patient.gender">
+           <option value=""> EMPTY </option>
+           <option value="Male">Male</option>
+           <option value="Female">Female</option>
+       </select>
     </div>
     <div >
       <label for="checkup.last">Last Checkup:</label>

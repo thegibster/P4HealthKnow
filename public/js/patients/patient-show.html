@@ -1,16 +1,19 @@
  Patient Page
-<p>{{patientPatientVm.patient.first_name}}</p>
-<p>{{patientPatientVm.patient.last_name}}</p>
-<p>{{patientPatientVm.patient.dob}}</p>
+<p>{{patientPatientVm.patient.first_name}} {{patientPatientVm.patient.last_name}}</p>
+<p>Born:</p>
+<p>{{patientPatientVm.patient.dob | date:'MM/dd/yyyy'}}</p>
+<p>Sex:</p>
 <p>{{patientPatientVm.patient.gender}}</p>
+<p>Dental History:</p>
 <li ng-repeat='den in patientPatientVm.patient.dental_history'>
-  {{den.vistType}} {{den.date}}
+  {{den.vistType}} {{den.date | date:'MM/dd/yyyy'}}
 </li>
 <p>{{patientPatientVm.patient.physical}}</p>
+<p>BloodType:</p>
 <p>{{patientPatientVm.patient.bloodtype}}</p>
-<p>{{patientPatientVm.patient.checkups.last}}</p> <p>last check</p>
+<p>{{patientPatientVm.patient.checkups.last | date:'MM/dd/yyyy'}}</p> <p>last check</p>
 <li ng-repeat='par in patientPatientVm.patient.checkups.previous'>
-{{par.name}} {{par.result}} {{par.date_of_physical}}</li>
+{{par.name}} {{par.result}} {{par.date_of_physical | date:'MM/dd/yyyy'}}</li>
 <p>{{patientPatientVm.patient.insurance_info.insurer}}</p>
 <p>{{patientPatientVm.patient.insurance_info.policyId}}</p>
 <p>{{patientPatientVm.patient.phone_number}}</p>
@@ -18,21 +21,22 @@
 {{pres.name}}</li>
 <li ng-repeat='presg in patientPatientVm.patient.prescriptions.glasses'>
 {{presg.presecription}} {{presg.manufacture}}</li>
+<p>Procedures:</p>
 <li ng-repeat=' proc in patientPatientVm.patient.procedures'>
   {{proc.nameOfOperation}} {{proc.lengthOfRec}}
 </li>
 <li ng-repeat='vac in patientPatientVm.patient.vaccinations'>
-  {{vac.nameOfVacc}} {{vac.dateOf}}
+  {{vac.nameOfVacc}} {{vac.dateOf | date:'MM/dd/yyyy'}}
 </li>
 <li ng-repeat='test in patientPatientVm.patient.test'>
-  {{test.nameOfTest}} {{test.dateOf}} {{test.results}}
+  {{test.nameOfTest}} {{test.dateOf | date:'MM/dd/yyyy'}} {{test.results}}
 </li>
 <a ui-sref="patientEdit({id:patientPatientVm.patient._id})">Edit This Patient</a>
 
 
 <form ng-submit="patientPatientVm.findPill(pill)">
-  Enter text and hit enter:
+  Try to indentify an unknown pill:
   <input type="text" ng-model="pill" name="text" />
-  <input type="submit" id="submit" value="Submit" />
+  <input type="submit" id="submit" value="Identify" />
 </form>
 {{patientPatientVm.showPill}}
