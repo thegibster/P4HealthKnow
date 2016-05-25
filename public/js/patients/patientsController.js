@@ -45,7 +45,7 @@
           //       console.log(response);
           //    });
         console.log(pill + " this is pill");
-        $http.put('http://localhost:3000/sillytest',{"imprint":pill}).success(function(data){
+        $http.put('/sillytest',{"imprint":pill}).success(function(data){
          vm.showPill = data;
          console.log(data + "success");
         });
