@@ -28,7 +28,7 @@
           // on success
           function(decodedToken) {
             $log.info('Logged in!', decodedToken);
-            $state.go('showList');
+            $state.go('patientPatient');
           },
           // on error
           function(err) {
@@ -39,13 +39,15 @@
     }
 
     function submitLogIn() {
+      console.log('Submit login func');
       authService
         .logIn(vm.logIn)
         .then(
           // on success
           function(decodedToken) {
+            console.log("logged in maybe");
             $log.info('Logged in!', decodedToken);
-            $state.go('showList');
+            $state.go('patientPatient');
           },
           // on error
           function(err) {

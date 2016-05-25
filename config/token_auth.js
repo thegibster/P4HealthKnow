@@ -54,6 +54,7 @@ function create(req, res, next) {
 
      var token = generateJwt(patient);
 
+     console.log(token);
      res.json(token);
    });
 }
