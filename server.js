@@ -34,6 +34,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Validate content-type.
+app.use(validateContentType);
+
 app.use('/', routes);
 
 

@@ -5,6 +5,8 @@ var parseString = require('xml2js').parseString;
 //Require controllers
 var patientsController = require('../controllers/patients');
 
+// // Require token authentication.
+// var token = require('../config/token_auth');
 
 // root path:
 router.get('/', patientsController.index);
@@ -53,9 +55,9 @@ router.put('/sillytest',function(req,res){
 //   .put(showsController.update)
 //   .delete(showsController.destroy);
 
-// /* GET home page. */
-// router.get('*', function(req, res, next) {
-//   res.sendFile('public/index.html');
-// });
+/* GET home page. */
+router.get('*', function(req, res, next) {
+  res.sendFile('public/index.html');
+});
 
 module.exports = router;
