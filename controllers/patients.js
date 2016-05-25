@@ -89,9 +89,10 @@ function update(req, res, next) {
    console.log(patient + "supposed new one");
    patient.save(function(err, updatedPatient) {
     if (err) next(err);
+
+    res.json(updatedPatient);
     console.log(updatedPatient);
     console.log("checking if passed right");
-    res.json(updatedPatient);
   });
 
  });
