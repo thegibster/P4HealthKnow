@@ -8,7 +8,7 @@
   userService.$inject = ["$log", "$http"];
 
   function userService($log, $http) {
-    $log.info("user service loaded!");
+    $log.info("Patient service loaded!");
 
     var service = {
       create: create
@@ -18,7 +18,7 @@
     function create(data) {
       var promise = $http({
         method: 'POST',
-        url:    '/api/users',
+        url:    '/api/patients',
         data:   data
       });
 

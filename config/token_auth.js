@@ -15,7 +15,7 @@ module.exports = {
 function extractPayload(patient, options) {
  return {
   _id: patient._id,
-  use: ['shows']
+  use: ['patients']
  };
 }
 
