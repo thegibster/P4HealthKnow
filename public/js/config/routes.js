@@ -27,7 +27,13 @@
         templateUrl: 'js/patients/patient-edit.html',
         controller: 'PatientEditController',
         controllerAs: 'patientEditVm'
-      });
+      })
+      .state("signin", {
+        url:          "/signin",
+        templateUrl:  "/js/auth/signin.html",
+        controller:   "SignInController",
+        controllerAs: "vm"
+      });;
 
     $urlRouterProvider.otherwise('/');
   }

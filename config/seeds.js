@@ -19,6 +19,8 @@ var patients = [{
 dental_history: [{visitType:'General Checkup',date: new Date('2002-09-09')
 }],
 dob: new Date('1970-05-01'),
+email: 'yummy@gmail.com',
+password : '111111',
 first_name: 'Marlon',
 gender:'M',
 insurance_info:{insurer:'Aetna',policyId:'#143Hd13'},
@@ -48,6 +50,8 @@ vaccinations:[{nameOfVacc:'HPV',dateOf:new Date('2000-05-01')},
 dental_history: [{visitType:'General Checkup',date: new Date('2002-09-09')
 }],
 dob: new Date('1970-05-01'),
+email: 'hello@gmail.com',
+password : '111111',
 first_name: 'Marlon',
 gender:'M',
 insurance_info:{insurer:'Aetna',policyId:'#143Hd13'},
