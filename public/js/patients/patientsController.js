@@ -94,7 +94,7 @@
       function editPatient() {
         PatientResource.update({id: vm.patient._id}, vm.patient).$promise.then(function(updatedPatient) {
           vm.patient = updatedPatient;
-          $state.go('patientPatient', {id: updatedPatient._id});
+          $state.go('patientPatient', {id: updatedPatient._id}); // need the id to be passed for proper function
         });
       }
     }

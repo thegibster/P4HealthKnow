@@ -39,15 +39,14 @@
     }
 
     function submitLogIn() {
-      console.log('Submit login func');
       authService
         .logIn(vm.logIn)
         .then(
           // on success
           function(decodedToken) {
-            console.log("logged in maybe");
             $log.info('Logged in!', decodedToken);
-            $state.go('patientPatient');
+            console.log("bacon")
+            $state.go('patientPatient', {id: decodedToken._id});
           },
           // on error
           function(err) {
