@@ -117,6 +117,7 @@ function update(req, res, next) {
   })
   .then(function(patient) {
     console.log('updated patient: ' + patient.first_name + " "+patient.last_name );
+    res.json(patient);
     // do something with updated user
   })
   .catch(function(err){
