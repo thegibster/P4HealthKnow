@@ -37,7 +37,7 @@
           }
         );
     }
-
+// error solved, needed to pass the id as a secondary parameter
     function submitLogIn() {
       authService
         .logIn(vm.logIn)
