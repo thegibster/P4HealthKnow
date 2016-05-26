@@ -27,13 +27,15 @@
 <li ng-repeat=' proc in patientPatientVm.patient.procedures'>
   {{proc.nameOfOperation}} {{proc.lengthOfRec}}
 </li>
-<li ng-repeat='vac in patientPatientVm.patient.vaccinations'>
-  {{vac.nameOfVacc}} {{vac.dateOf | date:'MM/dd/yyyy'}}
-</li>
+<div ng-if='patientPatientVm.patient.vaccinations.length > 0'>
+  <li ng-repeat='vac in patientPatientVm.patient.vaccinations'>
+   {{vac.nameOfVacc}} {{vac.dateOf | date:'MM/dd/yyyy'}}
+  </li>
+</div>
 <li ng-repeat='test in patientPatientVm.patient.test'>
   {{test.nameOfTest}} {{test.dateOf | date:'MM/dd/yyyy'}} {{test.results}}
 </li>
-<a ui-sref="patientEdit({id:patientPatientVm.patient._id})">Edit This Patient</a>
+<a ui-sref="patientEdit({id:patientPatientVm.patient._id})">Edit This Patient {{patientPatientVm.email}}</a>
 
 
 <form ng-submit="patientPatientVm.findPill(pill)">
