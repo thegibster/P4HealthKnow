@@ -89,8 +89,8 @@
 
       PatientResource.get({id: $stateParams.id}).$promise.then(function(jsonPatient) {
           vm.patient = jsonPatient;
-          vm.patient.dob = new Date(vm.patient.dob)
-          vm.patient.checkups.last = new Date(vm.patient.dob)
+          vm.patient.dob = new Date(vm.patient.dob);
+          vm.patient.checkups.last = new Date(vm.patient.checkups.last);
           for(var x in vm.patient.checkups.previous){
             console.log()
             vm.patient.checkups.previous[x].date_of_physical = new Date(vm.patient.checkups.previous[x].date_of_physical )
@@ -103,13 +103,14 @@
 
             vm.patient.dental_history[x].date= new Date(vm.patient.dental_history[x].date)
           }
+          for(var x in vm.patient.procedures){
+            vm.patient.procedures[x].nameOfOperation= vm.patient.procedures[x].nameOfOperation
+            vm.patient.procedures[x].lengthOfRec= parseInt(vm.patient.procedures[x].lengthOfRec)
+          }
           for(var x in vm.patient.test){
 
             vm.patient.test[x].dateOf= new Date(vm.patient.test[x].dateOf)
           }
-
-          vm.patient.dob = new Date(vm.patient.dob)
-          // console.log(new Date(vm.patient.dob))
       });
 
       function editPatient() {

@@ -22,13 +22,14 @@
       userService
         .create(vm.signUp)
         .then(function(res) {
+          console.log(res + " submoiited")
           return authService.logIn(vm.signUp);
         })
         .then(
           // on success
           function(decodedToken) {
             $log.info('Logged in!', decodedToken);
-            $state.go('patientPatient');
+            $state.go('patientPatient',{id: decodedToken._id});
           },
           // on error
           function(err) {

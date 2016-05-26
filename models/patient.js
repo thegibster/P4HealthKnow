@@ -5,27 +5,27 @@ var patientSchema = mongoose.Schema({
   bloodtype: String,
   checkups:{last:{type:Date, required:true,default: Date.now},
     previous:[{
-      name:String,
-      result:String,
+      name:{type:String, default: null},
+      result:{type:String, default: null},
       date_of_physical:{type:Date, required:true,default: Date.now}
     }]
   },
   dental_history: [{visitType:String,date:{type:Date ,required: true,default: Date.now}}],
   dob: {type:Date, required:true,default: Date.now},
   email: { type: String, required: true, unique: true },
-  first_name: String,
+  first_name: {type:String, default: null},
   gender:String,
   insurance_info:{insurer:String,policyId:String},
-  last_name: String,
+  last_name: {type:String, default: null},
   phone_number:String,
   prescriptions: {
-    drugs:[{name:String}],
-    glasses:[{prescription:String,manufacture:String}]
+    drugs:[{name:{type:String, default: null}}],
+    glasses:[{prescription:{type:String, default: null},manufacture:{type:String, default: null}}]
   },
-  primary_health_provider:{hospital:String,name:String},
+  primary_health_provider:{hospital:{type:String, default: null},name:{type:String, default: null}},
   procedures : [{nameOfOperation:String,lengthOfRec:String}],
-  test: [{nameOfTest:String,dateOf:{type:Date,required: true,default: Date.now},results:String}],
-  vaccinations:[{nameOfVacc:String,dateOf:{type:Date, required: true,default: Date.now}}]
+  test: [{nameOfTest:{type:String, default: null},dateOf:{type:Date,required: true,default: Date.now},results:String}],
+  vaccinations:[{nameOfVacc:{type:String, default: null},dateOf:{type:Date, required: true,default: Date.now}}]
 });
 
 // add bcrypt hashing to model (works on a password field)!
