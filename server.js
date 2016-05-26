@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var debug        = require('debug')('app:http');
 
 var routes = require('./config/routes');
 
@@ -32,6 +33,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(debugReq);
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Validate content-type.
@@ -47,7 +49,16 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
+// Error-handling layer.
+app.use(addFailedAuthHeader);
+app.use(function(err, req, res, next) {
+  err = (app.get('env') === 'development') ? err : {};
+
+  res.status(err.status || 500).json({
+    message: err.message,
+    error: err
+  });
+});
 
 // development error handler
 // will print stacktrace
@@ -71,7 +82,12 @@ app.use(function(err, req, res, next) {
   });
 });
 
-
+function debugReq(req, res, next) {
+  debug('params:', req.params);
+  debug('query:',  req.query);
+  debug('body:',   req.body);
+  next();
+}
 
 
 function allowCors(req, res, next) {

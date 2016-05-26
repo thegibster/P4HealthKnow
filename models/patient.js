@@ -1,16 +1,17 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+    debug    = require('debug')('app:models');
 
 var patientSchema = mongoose.Schema({
   bloodtype: String,
-  checkups:{last:Date,
+  checkups:{last:{type:Date, required:true,default: Date.now},
     previous:[{
       name:String,
       result:String,
-      date_of_physical:{type:Date, required:true}
+      date_of_physical:{type:Date, required:true,default: Date.now}
     }]
   },
-  dental_history: [{visitType:String,date:{type:Date ,required: true}}],
-  dob: Date,
+  dental_history: [{visitType:String,date:{type:Date ,required: true,default: Date.now}}],
+  dob: {type:Date, required:true,default: Date.now},
   email: { type: String, required: true, unique: true },
   first_name: String,
   gender:String,
@@ -23,8 +24,8 @@ var patientSchema = mongoose.Schema({
   },
   primary_health_provider:{hospital:String,name:String},
   procedures : [{nameOfOperation:String,lengthOfRec:String}],
-  test: [{nameOfTest:String,dateOf:{type:Date,required: true},results:String}],
-  vaccinations:[{nameOfVacc:String,dateOf:{type:Date, required: true}}]
+  test: [{nameOfTest:String,dateOf:{type:Date,required: true,default: Date.now},results:String}],
+  vaccinations:[{nameOfVacc:String,dateOf:{type:Date, required: true,default: Date.now}}]
 });
 
 // add bcrypt hashing to model (works on a password field)!

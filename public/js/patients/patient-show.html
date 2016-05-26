@@ -1,4 +1,5 @@
- Patient Page
+ Patient Page <br>
+ <i class="fa fa-wpforms" aria-hidden="true"></i>
 <p>{{patientPatientVm.patient.first_name}} {{patientPatientVm.patient.last_name}}</p>
 <p>Email:</p>
 <p>{{patientPatientVm.patient.email}}</p>
@@ -12,6 +13,7 @@
 </li>
 <p>{{patientPatientVm.patient.physical}}</p>
 <p>BloodType:</p>
+<i class="fa fa-heartbeat" aria-hidden="true"></i>
 <p>{{patientPatientVm.patient.bloodtype}}</p>
 <p>{{patientPatientVm.patient.checkups.last | date:'MM/dd/yyyy'}}</p> <p>last check</p>
 <li ng-repeat='par in patientPatientVm.patient.checkups.previous'>

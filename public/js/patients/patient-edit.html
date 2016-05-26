@@ -62,8 +62,8 @@
     </div>
     <div ng-repeat="history in patientEditVm.patient.dental_history">
       <label for="history.visitType">Dental History:</label>
-      <input type="text" name="history.visitType" ng-model="patientEditVm.patient.history.visitType">
-      <input type="date" name="history.date" ng-model="patientEditVm.patient.history.date">
+      <input type="text" name="history.visitType" ng-model="history.visitType">
+      <input type="date" name="history.date" ng-model="history.date">
     </div>
     <div>
       <label for="insurance_info">Insurance Information:</label>

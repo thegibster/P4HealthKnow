@@ -14,6 +14,13 @@ var token = require('../config/token_auth');
 // // router.post('/patients', patientsController.create);
 // // router.delete('/patients/:id', patientsController.destroy);
 
+// // users resource paths:
+// router.post('/patients',    usersCtrl.create);
+// router.get( '/patients/me', token.authenticate, patientsController.me);
+// router.post('/token',    token.create);
+// //
+
+
 //API
 router.get('/api/patients',patientsController.index);
 router.get('/api/patients/:id',patientsController.show);
