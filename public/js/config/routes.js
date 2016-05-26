@@ -28,6 +28,12 @@
         controller: 'PatientEditController',
         controllerAs: 'patientEditVm'
       })
+      // .state('backHome', {
+      //   url: '/patients/:id',
+      //   templateUrl: 'js/patients/patient-show.html',
+      //   controller: 'PatientPatientController',
+      //   controllerAs: 'patientPatientVm'
+      // })
       .state("signin", {
         url:          "/signin",
         templateUrl:  "/js/auth/signin.html",

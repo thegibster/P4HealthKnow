@@ -22,7 +22,7 @@ var token = require('../config/token_auth');
 
 
 //API
-router.get('/api/patients',patientsController.index);
+// router.get('/api/patients',patientsController.index);
 router.get('/api/patients/:id',patientsController.show);
 router.put('/api/patients/:id', patientsController.update);
 router.post('/api/patients', patientsController.create);

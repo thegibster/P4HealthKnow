@@ -66,8 +66,10 @@
       <input type="date" name="history.date" ng-model="history.date">
     </div>
     <div>
-      <label for="insurance_info">Insurance Information:</label>
+      <p>Insurance Information:</p>
+      <label for="insurance_info"><i class="fa fa-stethoscope" aria-hidden="true"></i> Insurer</label>
       <input type="text" name="insurance_info.insurer" ng-model="patientEditVm.patient.insurance_info.insurer">
+      <label for="insurance_info">Policy ID</label>
       <input type="text" name="insurance_info.policyId" ng-model="patientEditVm.patient.insurance_info.policyId">
     </div>
     <div>
@@ -84,14 +86,15 @@
       </div>
     </div>
     <div>
-      <label >Primary Health Provider:</label>
-      <label for="primary_health_provider.name">Doctor:</label>
+      <p >Primary Health Care Provider</p>
+
+      <label for="primary_health_provider.name"><i class="fa fa-user-md" aria-hidden="true"></i> Doctor</label>
       <input type="text" name="name" ng-model="patientEditVm.patient.primary_health_provider.name">
-      <label for="primary_health_provider.hospital">Primary Hospital:</label>
+      <label for="primary_health_provider.hospital"><i class="fa fa-hospital-o" aria-hidden="true"></i> Primary Hospital</label>
       <input type="text" name="hospital" ng-model="patientEditVm.patient.primary_health_provider.hospital">
     </div>
     <div>
-      <label for="procedure">Procedures:</label>
+      <p><i class="fa fa-medkit" aria-hidden="true"></i> Procedures</p>
       <div ng-repeat=" proc in patientEditVm.patient.procedures">
       <input type="text" name="proc.nameOfOperation" ng-model="proc.nameOfOperation">
       <input type="text" name="proc.lengthOfRec" ng-model="proc.lengthOfRec">

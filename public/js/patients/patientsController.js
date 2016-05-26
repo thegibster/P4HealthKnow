@@ -37,6 +37,7 @@
       PatientResource.get({id: $stateParams.id}).$promise.then(function(jsonPatient) {
           console.log(jsonPatient);
           vm.patient = jsonPatient;
+
       });
        vm.findPill =function (pill){
 
@@ -103,6 +104,7 @@
 
             vm.patient.dental_history[x].date= new Date(vm.patient.dental_history[x].date)
           }
+
           for(var x in vm.patient.procedures){
             vm.patient.procedures[x].nameOfOperation= vm.patient.procedures[x].nameOfOperation
             vm.patient.procedures[x].lengthOfRec= parseInt(vm.patient.procedures[x].lengthOfRec)
