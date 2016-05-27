@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Raleway:500' rel='stylesheet' type='text/css'>
+
   <script src="js/vendor/jwt-decode.2.0.1.js"></script>
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
@@ -15,15 +17,36 @@
   <script src="https://use.fontawesome.com/b40cf2b5bb.js"></script>
 </head>
 <body>
-  <header ng-controller="NavbarController as vm">
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <a ui-sref="patientPatient({id: vm.getUserId()})" class="navbar-brand btn btn-default navbar-btn navbar-right button-success pure-button">Home</a>
+
+<header class="header" role="banner" ng-controller="NavbarController as vm">
+ <div class="logo">
+     <a id="logo-container" href="#" class="brand-logo center black-text text-lighten-2">Health Now</a>
+ </div>
+<br>
+  <div class="headeritems">
+
+
+
+<a class="header" ui-sref="patientPatient({id: vm.getUserId()})">Home</a>
+
+      <a class="header" ng-hide="vm.authService.isLoggedIn()" ui-sref="signin">Sign in</a>
+       <a class="header" ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button">Sign out</>
+         </a>
+     </a>
+   </div>
+</header>
+
+<!--
+  <header class="header"ng-controller="NavbarController as vm">
+        <div class="container">
+        <a id="logo" class="brand-logo left-align">Health Know</a>
+      </div>
+      <div class="items">
+
         <button ng-hide="vm.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right button-success pure-button">Sign in</button>
         <button ng-show="vm.authService.isLoggedIn()" ng-click= "vm.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
       </div>
-    </nav>
-  </header>
+  </header> -->
   <div ui-view></div>
   <script src="js/app.js" charset="utf-8"></script>
   <script src="js/config/app.debug.js"></script>

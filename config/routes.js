@@ -26,6 +26,7 @@ var token = require('../config/token_auth');
 router.get('/api/patients/:id',patientsController.show);
 router.put('/api/patients/:id', patientsController.update);
 router.post('/api/patients', patientsController.create);
+// router.get('/api/patients/:id/findDrug', patientsController.findDrug);
 // router.delete('/api/patients/:id', patientsController.destroy);
 
 router.put('/sillytest',function(req,res){
@@ -63,7 +64,7 @@ router.route('/api/token')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.sendfile('public/index.html');
+  res.sendfile('public/home.html');
 });
 router.get('*', function(req, res, next) {
   res.sendFile('/');

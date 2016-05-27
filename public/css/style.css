@@ -1,4 +1,4 @@
-* {
+/** {
   box-sizing: border-box;
 }
 
@@ -27,11 +27,50 @@ a {
   cursor: pointer;
 }
 
-.wrapper {
+/*.wrapper {
   min-height: 100%;
   height: auto !important;
   height: 100%;
   margin: 0 auto -50px; /* the bottom margin is the negative value of the footer's height */
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+}
+h1 {
+  font-size: 100px;
+}
+h2 {
+  margin-top: 100px;
+  margin-bottom: 45px;
+  font-size: 85px;
+  text-align: center;
+  color: grey;
+}
+h5 {
+  font-size: 50px;
+  margin-top: -35px;
+  margin-bottom: 45px;
+}
+.table1 {
+  margin-bottom: 45px;
+}
+.table2 {
+  margin-bottom: 45px;
+}
+.table3 {
+  margin-bottom: 45px;
+}
+.table4 {
+  margin-bottom: 45px;
+}
+.table5 {
+  margin-bottom: 45px;
+}
+.table6 {
+  margin-bottom: 45px;
+}
+.bckgrnd {
+  background-color: grey;
 }
 
 footer {
@@ -42,14 +81,24 @@ footer {
   font-size: 1rem;
   height: 60px;
 }
+.header {
 
-.container-fluid {
+  background-color: #3498db;
+}
+#logo-container {
+  font-size: 30px;
+}
+
+.indicators {
+  display: none;
+}
+/*.container-fluid {
   margin-right: auto;
   margin-left: auto;
   max-width: 950px;
-}
+}*/
 
-header,
+
 main,
 footer {
   text-align: center;
@@ -65,9 +114,29 @@ form {
   margin: 0 auto;
 }
 
+.header {
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
 #exampleInputEmail1.red-border {
   border: 2px solid red;
 }
 .tableNames{
   text-align: center;
 }
+p {
+  text-align: center;
+}
+.pill{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+#foundPill{
+  margin-bottom: -100px;
+}
+/*.headeritems {
+  background-color: red;
+}*/

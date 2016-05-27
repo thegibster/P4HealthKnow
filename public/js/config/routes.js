@@ -28,9 +28,9 @@
         controller: 'PatientEditController',
         controllerAs: 'patientEditVm'
       })
-      // .state('backHome', {
-      //   url: '/patients/:id',
-      //   templateUrl: 'js/patients/patient-show.html',
+      // .state('findDrug', {
+      //   url: '/patients/:id/findDrug',
+      //   templateUrl: 'js/patients/drug-show.html',
       //   controller: 'PatientPatientController',
       //   controllerAs: 'patientPatientVm'
       // })
