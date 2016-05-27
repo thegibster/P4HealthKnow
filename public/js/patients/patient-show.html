@@ -90,7 +90,8 @@
         <tbody ng-repeat='pres in patientPatientVm.patient.prescriptions.glasses'>
           <tr>
             <td>{{$index+1}}</td>
-            <td>{{pres.name}}</td>
+            <td>{{pres.prescription}}</td>
+            <td>{{pres.manufacture}}</td>
           </tr>
         </tbody>
       </table>
