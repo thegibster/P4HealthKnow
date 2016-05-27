@@ -1,4 +1,14 @@
  Patient Page <br>
+ <div class="btn-group open">
+  <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
+  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+    <span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
+  </a>
+  <ul class="dropdown-menu">
+    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
+    <li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
+  </ul>
+</div>
  <i class="fa fa-wpforms" aria-hidden="true"></i>
 <p>{{patientPatientVm.patient.first_name}} {{patientPatientVm.patient.last_name}}</p>
 <p>Email:</p>
@@ -21,28 +31,132 @@
 <p>{{patientPatientVm.patient.insurance_info.insurer}}</p>
 <p>{{patientPatientVm.patient.insurance_info.policyId}}</p>
 <p>{{patientPatientVm.patient.phone_number}}</p>
-<li ng-repeat='pres in patientPatientVm.patient.prescriptions.drugs'>
-{{pres.name}}</li>
-<li ng-repeat='presg in patientPatientVm.patient.prescriptions.glasses'>
-{{presg.presecription}} {{presg.manufacture}}</li>
-<p>Procedures:</p>
-<li ng-repeat=' proc in patientPatientVm.patient.procedures'>
-  {{proc.nameOfOperation}} {{proc.lengthOfRec}}
-</li>
-<div ng-if='patientPatientVm.patient.vaccinations.length > 0'>
-  <li ng-repeat='vac in patientPatientVm.patient.vaccinations'>
-   {{vac.nameOfVacc}} {{vac.dateOf | date:'MM/dd/yyyy'}}
-  </li>
+<div ng-if='patientPatientVm.patient.prescriptions.drugs.length > 0'>
+
+<p class="tableNames">Drugs</p>
+  <table class="pure-table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Drug Name</th>
+        </tr>
+    </thead>
+
+    <tbody ng-repeat='pres in patientPatientVm.patient.prescriptions.drugs'>
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{pres.name}}</td>
+        </tr>
+    </tbody>
+</table>
 </div>
-<li ng-repeat='test in patientPatientVm.patient.test'>
-  {{test.nameOfTest}} {{test.dateOf | date:'MM/dd/yyyy'}} {{test.results}}
-</li>
-<a ui-sref="patientEdit({id:patientPatientVm.patient._id})">Edit This Patient {{patientPatientVm.email}}</a>
+
+<div ng-if='patientPatientVm.patient.prescriptions.glasses.length > 0'>
+<p class="tableNames">Glasses</p>
+  <table class="pure-table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Drug Name</th>
+        </tr>
+    </thead>
+
+    <tbody ng-repeat='pres in patientPatientVm.patient.prescriptions.drugs'>
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{pres.name}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+
+
+<div>
+<p class="tableNames"><i class="fa fa-ambulance" aria-hidden="true"></i> Procedures</p>
+
+
+  <!-- {{proc.nameOfOperation}} {{proc.lengthOfRec}} -->
+  <table class="pure-table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Procedure Name</th>
+            <th>Time to Recover in Months</th>
+            <!-- <th>Year</th> -->
+        </tr>
+    </thead>
+
+    <tbody ng-repeat=' proc in patientPatientVm.patient.procedures'>
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{proc.nameOfOperation}}</td>
+            <td>{{proc.lengthOfRec}}</td>
+            <!-- <td>2009</td> -->
+        </tr>
+
+    </tbody>
+</table>
+
+
+</div>
+<p class="tableNames">Vaccinaitons</p>
+<div ng-if='patientPatientVm.patient.vaccinations.length > 0'>
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Vaccination Name</th>
+            <th>Time of Vaccination</th>
+            <!-- <th>Year</th> -->
+        </tr>
+    </thead>
+
+    <tbody ng-repeat='vac in patientPatientVm.patient.vaccinations'>
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{vac.nameOfVacc}} </td>
+            <td>{{vac.dateOf | date:'MM/dd/yyyy'}}</td>
+            <!-- <td>2009</td> -->
+        </tr>
+
+    </tbody>
+</table>
+
+</div>
+<p class="tableNames">Tests</p>
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Tests</th>
+            <th>Test Results</th>
+            <th>Test Date</th>
+            <!-- <th>Year</th> -->
+        </tr>
+    </thead>
+
+    <tbody ng-repeat='test in patientPatientVm.patient.test'>
+        <tr>
+            <td>{{$index+1}}</td>
+            <td>{{test.nameOfTest}}  </td>
+            <td>{{test.results}} </td>
+            <td>{{test.dateOf | date:'MM/dd/yyyy'}}</td>
+            <!-- <td>2009</td> -->
+        </tr>
+
+    </tbody>
+</table>
+
+
+<a ui-sref="patientEdit({id:patientPatientVm.patient._id})"><p class="tableNames">Edit This Patient {{patientPatientVm.email}}</p></a>
+
 
 
 <form ng-submit="patientPatientVm.findPill(pill)">
-  Try to indentify an unknown pill:
+  <p class="tableNames">Try to indentify an unknown pill:</p>
   <input type="text" ng-model="pill" name="text" />
-  <input type="submit" id="submit" value="Identify" />
+ <p class="tableNames"> <input type="submit" id="submit" value="Identify" /></p>
 </form>
 {{patientPatientVm.showPill}}
