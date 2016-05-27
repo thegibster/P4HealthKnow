@@ -1,7 +1,7 @@
 var Patient = require('../models/patient');
 
 module.exports = {
-  index: index,
+  // index: index,
   show: show,
   create: create,
   update: update,
