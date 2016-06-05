@@ -1,22 +1,22 @@
 (function() {
-  "use strict";
+    "use strict";
 
-  angular
-    .module("healthKnowIt")
-    .factory("jsonHeadersService", jsonHeadersService);
+    angular
+        .module("healthKnowIt")
+        .factory("jsonHeadersService", jsonHeadersService);
 
-  jsonHeadersService.$inject = ["$log"];
+    jsonHeadersService.$inject = ["$log"];
 
-  function jsonHeadersService($log) {
-    return {
-      request: addJsonHeaders
-    };
+    function jsonHeadersService($log) {
+        return {
+            request: addJsonHeaders
+        };
 
-    function addJsonHeaders(request) {
-      $log.debug("Setting JSON headers.");
-      request.headers['Content-Type'] = 'application/json';
-      return request;
+        function addJsonHeaders(request) {
+            $log.debug("Setting JSON headers.");
+            request.headers['Content-Type'] = 'application/json';
+            return request;
+        }
     }
-  }
 
 })();

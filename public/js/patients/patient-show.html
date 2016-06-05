@@ -1,37 +1,39 @@
 <h2>Patient Page</h2>
 <br>
 <div class="bckgrnd container">
- <div class="container">
- <table class="responsive-table centered table1">
-        <thead>
-          <tr>
-              <th data-field="id">Name</th>
-              <th data-field="email">Email</th>
-              <th data-field="date">Birth Date</th>
-              <th data-field="gender">Gender</th>
-              <th data-field="type">Blood Type</th>
-              <th data-field="date">Last Check In</th>
+    <div class="container">
+        <table class="responsive-table centered table1">
+            <thead>
+                <tr>
+                    <th data-field="id">Name</th>
+                    <th data-field="email">Email</th>
+                    <th data-field="date">Birth Date</th>
+                    <th data-field="gender">Gender</th>
+                    <th data-field="type">Blood Type</th>
+                    <th data-field="date">Last Check In</th>
 
-          </tr>
-        </thead>
+                </tr>
+            </thead>
 
-        <tbody>
-          <tr>
-            <td>{{patientPatientVm.patient.first_name}} {{patientPatientVm.patient.last_name}}</td>
-            <td>{{patientPatientVm.patient.email}}</td>
-            <td>{{patientPatientVm.patient.dob | date:'MM/dd/yyyy'}}</td>
-            <td>{{patientPatientVm.patient.gender}}</td>
-            <td>{{patientPatientVm.patient.bloodtype}}</td>
-            <td>{{patientPatientVm.patient.checkups.last | date:'MM/dd/yyyy'}}</td>
-          </tr>
-        </tbody>
-      </table>
-</div>
+            <tbody>
+                <tr>
+                    <td>{{patientPatientVm.patient.first_name}} {{patientPatientVm.patient.last_name}}</td>
+                    <td>{{patientPatientVm.patient.email}}</td>
+                    <td>{{patientPatientVm.patient.dob | date:'MM/dd/yyyy'}}</td>
+                    <td>{{patientPatientVm.patient.gender}}</td>
+                    <td>{{patientPatientVm.patient.bloodtype}}</td>
+                    <td>{{patientPatientVm.patient.checkups.last | date:'MM/dd/yyyy'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 
 
-<a ui-sref="patientEdit({id:patientPatientVm.patient._id})"><p class="tableNames">Edit This Patient {{patientPatientVm.email}}</p></a>
-<!--
+    <a ui-sref="patientEdit({id:patientPatientVm.patient._id})">
+        <p class="tableNames">Edit This Patient {{patientPatientVm.email}}</p>
+    </a>
+    <!--
 <li ng-repeat='den in patientPatientVm.patient.dental_history'>
   {{den.vistType}} {{den.date | date:'MM/dd/yyyy'}}
 </li>
@@ -45,25 +47,25 @@
 <p>{{patientPatientVm.patient.phone_number}}</p>
 <!-- <div class="pure-u-1-3" ng-if='patientPatientVm.patient.prescriptions.drugs.length > 0'> -->
 
-<div class="container">
- <table class="responsive-table centered table2">
-        <thead>
-        <tr>
-            <th>DRUGS</th>
-        </tr>
-    </thead>
+    <div class="container">
+        <table class="responsive-table centered table2">
+            <thead>
+                <tr>
+                    <th>DRUGS</th>
+                </tr>
+            </thead>
 
-        <tbody ng-repeat='pres in patientPatientVm.patient.prescriptions.drugs'>
-          <tr>
-            <td>{{$index+1}}</td>
-            <td>{{pres.name}}</td>
-          </tr>
-        </tbody>
-      </table>
-</div>
+            <tbody ng-repeat='pres in patientPatientVm.patient.prescriptions.drugs'>
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{pres.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 
-<!-- <p class="tableNames">Drugs</p>
+    <!-- <p class="tableNames">Drugs</p>
   <table class="pure-table">
 
 
@@ -76,28 +78,29 @@
 </table>
 </div> -->
 
-<div class="container">
-<p class="tableNames">Glasses</p>
- <table class="responsive-table centered table3">
-        <thead>
-        <tr>
-            <th class="tableNames"><i class="fa fa-eye" aria-hidden="true"></i></th>
-            <th class="tableNames">Prescription</th>
-            <th class="tableNames">Manufacture</th>
-        </tr>
-    </thead>
+    <div class="container">
+        <p class="tableNames">Glasses</p>
+        <table class="responsive-table centered table3">
+            <thead>
+                <tr>
+                    <th class="tableNames"><i class="fa fa-eye" aria-hidden="true"></i>
+                    </th>
+                    <th class="tableNames">Prescription</th>
+                    <th class="tableNames">Manufacture</th>
+                </tr>
+            </thead>
 
-        <tbody ng-repeat='pres in patientPatientVm.patient.prescriptions.glasses'>
-          <tr>
-            <td>{{$index+1}}</td>
-            <td>{{pres.prescription}}</td>
-            <td>{{pres.manufacture}}</td>
-          </tr>
-        </tbody>
-      </table>
-</div>
+            <tbody ng-repeat='pres in patientPatientVm.patient.prescriptions.glasses'>
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{pres.prescription}}</td>
+                    <td>{{pres.manufacture}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<!-- <div class="pure-u-1-3" ng-if='patientPatientVm.patient.prescriptions.glasses.length > 0'>
+    <!-- <div class="pure-u-1-3" ng-if='patientPatientVm.patient.prescriptions.glasses.length > 0'>
 <p class="tableNames">Glasses</p>
   <table class="pure-table">
     <thead>
@@ -118,36 +121,36 @@
 </table>
 </div> -->
 
-<div class="container">
-<p class="tableNames"><i class="fa fa-ambulance centered table4" aria-hidden="true"></i> Procedures</p>
- <table class="responsive-table centered table4">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Procedure Name</th>
-            <th>Time to Recover in Months</th>
-        </tr>
-    </thead>
+    <div class="container">
+        <p class="tableNames"><i class="fa fa-ambulance centered table4" aria-hidden="true"></i> Procedures</p>
+        <table class="responsive-table centered table4">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Procedure Name</th>
+                    <th>Time to Recover in Months</th>
+                </tr>
+            </thead>
 
-        <tbody ng-repeat=' proc in patientPatientVm.patient.procedures'>
-        <tr>
-            <td>{{$index+1}}</td>
-            <td>{{proc.nameOfOperation}}</td>
-            <td>{{proc.lengthOfRec}}</td>
-            <!-- <td>2009</td> -->
-       </tr>
-      </tbody>
-   </table>
-</div>
+            <tbody ng-repeat=' proc in patientPatientVm.patient.procedures'>
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{proc.nameOfOperation}}</td>
+                    <td>{{proc.lengthOfRec}}</td>
+                    <!-- <td>2009</td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 
 
-<!-- <div class="pure-u-1-3">
+    <!-- <div class="pure-u-1-3">
 <p class="tableNames"><i class="fa fa-ambulance centered" aria-hidden="true"></i> Procedures</p>
  -->
 
-  <!-- {{proc.nameOfOperation}} {{proc.lengthOfRec}} -->
-  <!-- <table class="pure-table">
+    <!-- {{proc.nameOfOperation}} {{proc.lengthOfRec}} -->
+    <!-- <table class="pure-table">
     <thead>
         <tr>
             <th></th>
@@ -168,29 +171,29 @@
     </tbody>
 </table> -->
 
-<div class="container">
-<p class="tableNames">Vaccinaitons</p>
- <table class="responsive-table centered table 5">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Vaccination Name</th>
-            <th>Time of Vaccination</th>
-        </tr>
-    </thead>
+    <div class="container">
+        <p class="tableNames">Vaccinaitons</p>
+        <table class="responsive-table centered table 5">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Vaccination Name</th>
+                    <th>Time of Vaccination</th>
+                </tr>
+            </thead>
 
-        <tbody ng-repeat='vac in patientPatientVm.patient.vaccinations'>
-        <tr>
-            <td>{{$index+1}}</td>
-            <td>{{vac.nameOfVacc}} </td>
-            <td>{{vac.dateOf | date:'MM/dd/yyyy'}}</td>
-            <!-- <td>2009</td> -->
-                   </tr>
-        </tbody>
-   </table>
-</div>
+            <tbody ng-repeat='vac in patientPatientVm.patient.vaccinations'>
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{vac.nameOfVacc}} </td>
+                    <td>{{vac.dateOf | date:'MM/dd/yyyy'}}</td>
+                    <!-- <td>2009</td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-<!-- </div class="pure-u-1-3">
+    <!-- </div class="pure-u-1-3">
 <p class="tableNames">Vaccinaitons</p>
 <div  ng-if='patientPatientVm.patient.vaccinations.length > 0'>
 <table class="pure-table">
@@ -214,32 +217,33 @@
     </tbody>
 </table> -->
 
-<div class="container">
-<p class="tableNames">Tests</p>
- <table class="responsive-table centered table6">
-        <thead>
-        <tr>
-            <th><i class="fa fa-flask" aria-hidden="true"></i></th>
-            <th>Tests</th>
-            <th>Test Results</th>
-            <th>Test Date</th>
-        </tr>
-    </thead>
+    <div class="container">
+        <p class="tableNames">Tests</p>
+        <table class="responsive-table centered table6">
+            <thead>
+                <tr>
+                    <th><i class="fa fa-flask" aria-hidden="true"></i>
+                    </th>
+                    <th>Tests</th>
+                    <th>Test Results</th>
+                    <th>Test Date</th>
+                </tr>
+            </thead>
 
-        <tbody ng-repeat='test in patientPatientVm.patient.test'>
-        <tr>
-            <td>{{$index+1}}</td>
-            <td>{{test.nameOfTest}}  </td>
-            <td>{{test.results}} </td>
-            <td>{{test.dateOf | date:'MM/dd/yyyy'}}</td>
-            <!-- <td>2009</td> -->
-         </tr>
+            <tbody ng-repeat='test in patientPatientVm.patient.test'>
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{test.nameOfTest}} </td>
+                    <td>{{test.results}} </td>
+                    <td>{{test.dateOf | date:'MM/dd/yyyy'}}</td>
+                    <!-- <td>2009</td> -->
+                </tr>
 
-    </tbody>
-   </table>
-</div>
+            </tbody>
+        </table>
+    </div>
 
-<!--
+    <!--
 </div>
 <div class="pure-u-1-4">
 <p class="tableNames">Tests</p>
@@ -271,10 +275,10 @@
 
 
 <form ng-submit="patientPatientVm.findPill(pill)">
-  <p class="tableNames">Indentify an unknown pill</p>
-   <div class="pill">{{patientPatientVm.showPill}}</div>
-  <input type="text" placeholder="Search Drug" ng-model="pill" name="text" id="foundPill"/>
- <p class="tableNames"> <input type="submit" id="submit" value="Identify" /></p>
+    <p class="tableNames">Indentify an unknown pill</p>
+    <div class="pill">{{patientPatientVm.showPill}}</div>
+    <input type="text" placeholder="Search Drug" ng-model="pill" name="text" id="foundPill" />
+    <p class="tableNames">
+        <input type="submit" id="submit" value="Identify" />
+    </p>
 </form>
-
-

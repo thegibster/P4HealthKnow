@@ -1,22 +1,22 @@
 (function() {
-  "use strict";
+    "use strict";
 
-  angular
-    .module("healthKnowIt")
-    .controller("NavbarController", NavbarController);
+    angular
+        .module("healthKnowIt")
+        .controller("NavbarController", NavbarController);
 
-  NavbarController.$inject = ["$log", "authService"];
+    NavbarController.$inject = ["$log", "authService"];
 
-  function NavbarController($log, authService) {
-    var vm = this;
+    function NavbarController($log, authService) {
+        var vm = this;
 
-    vm.authService = authService;
-    vm.getUserId = getUserId;
+        vm.authService = authService;
+        vm.getUserId = getUserId;
 
-    function getUserId() {
-      return authService.isLoggedIn() && authService.loggedInUser()._id;
+        function getUserId() {
+            return authService.isLoggedIn() && authService.loggedInUser()._id;
+        }
+
+        $log.info("NavbarController loaded!");
     }
-
-    $log.info("NavbarController loaded!");
-  }
 })();

@@ -1,16 +1,16 @@
 (function() {
-  "use strict";
+    "use strict";
 
-  angular
-    .module("healthKnowIt")
-    .config(debug);
+    angular
+        .module("healthKnowIt")
+        .config(debug);
 
-  debug.$inject = ["$logProvider"];
+    debug.$inject = ["$logProvider"];
 
-  function debug($logProvider) {
-    // Set this to true to print $log.debug statements to the
-    // console.
-    $logProvider.debugEnabled(false);
-  }
+    function debug($logProvider) {
+        // Set this to true to print $log.debug statements to the
+        // console.
+        $logProvider.debugEnabled(false);
+    }
 
 })();

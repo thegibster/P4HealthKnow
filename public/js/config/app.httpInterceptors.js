@@ -1,16 +1,16 @@
 (function() {
-  "use strict";
+    "use strict";
 
-  angular
-    .module("healthKnowIt")
-    .config(configure);
+    angular
+        .module("healthKnowIt")
+        .config(configure);
 
-  configure.$inject = ["$httpProvider"];
+    configure.$inject = ["$httpProvider"];
 
-  function configure($httpProvider) {
-    $httpProvider.interceptors.push("jsonHeadersService");
-    $httpProvider.interceptors.push("tokenSigningService");
-    $httpProvider.interceptors.push("authErrorRedirect");
-  }
+    function configure($httpProvider) {
+        $httpProvider.interceptors.push("jsonHeadersService");
+        $httpProvider.interceptors.push("tokenSigningService");
+        $httpProvider.interceptors.push("authErrorRedirect");
+    }
 
 })();
