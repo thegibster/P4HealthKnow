@@ -31,3 +31,5 @@ npm-debug.log
 
 # Environment variables we do not want in git.
 .env
+
+ajaxFuncs.js
